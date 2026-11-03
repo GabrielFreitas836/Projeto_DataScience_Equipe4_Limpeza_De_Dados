@@ -1,0 +1,38 @@
+{
+    "jogadores_10000_20261103_134509_263507.csv": {
+        "total_linhas_finais": 10200,
+        "linhas_duplicadas_inseridas": 200,
+        "campos_ausentes_inseridos": 494,
+        "campos_despadronizados_inseridos": 781
+    },
+    "sessoes_20261103_134509_874814.csv": {
+        "total_linhas_finais": 386727,
+        "linhas_duplicadas_inseridas": 7582,
+        "campos_ausentes_inseridos": 19020,
+        "campos_despadronizados_inseridos": 29959
+    },
+    "partidas_20261103_134516_391130.csv": {
+        "total_linhas_finais": 607888,
+        "linhas_duplicadas_inseridas": 11919,
+        "campos_ausentes_inseridos": 29797,
+        "campos_despadronizados_inseridos": 46641
+    },
+    "compras_20261103_134540_156577.csv": {
+        "total_linhas_finais": 15245,
+        "linhas_duplicadas_inseridas": 298,
+        "campos_ausentes_inseridos": 732,
+        "campos_despadronizados_inseridos": 1143
+    },
+    "itens_20261103_134553_102277.csv": {
+        "total_linhas_finais": 37,
+        "linhas_duplicadas_inseridas": 0,
+        "campos_ausentes_inseridos": 0,
+        "campos_despadronizados_inseridos": 1
+    },
+    "itens_compra_20261103_134553_108811.csv": {
+        "total_linhas_finais": 20602,
+        "linhas_duplicadas_inseridas": 403,
+        "campos_ausentes_inseridos": 0,
+        "campos_despadronizados_inseridos": 1625
+    }
+}
