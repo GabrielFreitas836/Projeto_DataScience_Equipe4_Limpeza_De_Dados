@@ -32,7 +32,7 @@ def main():
         "--recursive",
         "--no-parent",
         "--no-directories",
-        "-accept=csv",
+        "--accept=csv",
         f"--directory-prefix={str(DIR_CSVS)}",
         URL_ORIGEM,
     ]
