@@ -73,7 +73,7 @@ def main():
 
             cmd = [
                 rscript_bin,
-                "/opt/projeto/etl/clean_data.R",
+                "/opt/projeto/etl/etl-script.R",
                 lote_id,
             ] + [str(f) for f in files_sorted]
 
