@@ -37,7 +37,7 @@ invisible(lapply(pacotes, library, character.only = TRUE))
 base_repo = here()
 
 # 1.2 Verificar pasta
-pasta_dados = file.path(base_repo, "..", "csvs")
+pasta_dados = file.path("/opt","projeto","csvs") #file.path(base_repo, "..", "csvs")
 
 if (!dir.exists(pasta_dados)){
   stop("A pasta não existe: ", pasta_dados)
@@ -57,12 +57,12 @@ encontrar_csv = function(pasta, padrao){
 
 # 1.4 Padrões e importação
 padroes = c(
-  compras       = "^[0-9]*compras_[0-9]{8}_.*\\.csv$",
-  itens         = "^[0-9]*itens_[0-9]{8}_.*\\.csv$",
-  itens_compras = "^[0-9]*itens_compra_[0-9]{8}_.*\\.csv$",
-  jogadores     = "^[0-9]*jogadores_[0-9]+_[0-9]{8}_.*\\.csv$",
-  partidas      = "^[0-9]*partidas_[0-9]{8}_.*\\.csv$",
-  sessoes       = "^[0-9]*sessoes_[0-9]{8}_.*\\.csv$"
+  compras       = "^[0-9]*-compras_[0-9]{8}_.*\\.csv$",
+  itens         = "^[0-9]*-itens_[0-9]{8}_.*\\.csv$",
+  itens_compras = "^[0-9]*-itens_compra_[0-9]{8}_.*\\.csv$",
+  jogadores     = "^[0-9]*-jogadores_[0-9]+_[0-9]{8}_.*\\.csv$",
+  partidas      = "^[0-9]*-partidas_[0-9]{8}_.*\\.csv$",
+  sessoes       = "^[0-9]*-sessoes_[0-9]{8}_.*\\.csv$"
 )
 
 for (nome in names(padroes)){
@@ -1117,7 +1117,7 @@ cat("\nVerificações:", nrow(painel),
 # 4. LOAD - EXPORTAÇÃO DOS DATASETS LIMPOS
 # ------------------------------------------------------------------------------
 
-pasta_saida = file.path(base_repo, "..", "csvs_tratados")
+pasta_saida = file.path("/opt","projeto","csvs_tratados") #file.path(base_repo, "..", "csvs_tratados")
 dir.create(pasta_saida, showWarnings = FALSE, recursive = TRUE)
 
 saidas = list(
