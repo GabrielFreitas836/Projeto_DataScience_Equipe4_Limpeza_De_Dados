@@ -37,7 +37,7 @@ invisible(lapply(pacotes, library, character.only = TRUE))
 base_repo = here()
 
 # 1.2 Verificar pasta
-pasta_dados = file.path(base_repo, "gerador", "gerador", "output", "sujos")
+pasta_dados = file.path(base_repo, "..", "csvs")
 
 if (!dir.exists(pasta_dados)){
   stop("A pasta não existe: ", pasta_dados)
@@ -1117,7 +1117,7 @@ cat("\nVerificações:", nrow(painel),
 # 4. LOAD - EXPORTAÇÃO DOS DATASETS LIMPOS
 # ------------------------------------------------------------------------------
 
-pasta_saida = file.path(base_repo, "gerador", "gerador", "limpos")
+pasta_saida = file.path(base_repo, "..", "csvs_tratados")
 dir.create(pasta_saida, showWarnings = FALSE, recursive = TRUE)
 
 saidas = list(
