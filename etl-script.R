@@ -57,12 +57,12 @@ encontrar_csv = function(pasta, padrao){
 
 # 1.4 Padrões e importação
 padroes = c(
-  compras       = "^compras_[0-9]{8}_.*\\.csv$",
-  itens         = "^itens_[0-9]{8}_.*\\.csv$",
-  itens_compras = "^itens_compra_[0-9]{8}_.*\\.csv$",
-  jogadores     = "^jogadores_[0-9]+_[0-9]{8}_.*\\.csv$",
-  partidas      = "^partidas_[0-9]{8}_.*\\.csv$",
-  sessoes       = "^sessoes_[0-9]{8}_.*\\.csv$"
+  compras       = "^[0-9]*compras_[0-9]{8}_.*\\.csv$",
+  itens         = "^[0-9]*itens_[0-9]{8}_.*\\.csv$",
+  itens_compras = "^[0-9]*itens_compra_[0-9]{8}_.*\\.csv$",
+  jogadores     = "^[0-9]*jogadores_[0-9]+_[0-9]{8}_.*\\.csv$",
+  partidas      = "^[0-9]*partidas_[0-9]{8}_.*\\.csv$",
+  sessoes       = "^[0-9]*sessoes_[0-9]{8}_.*\\.csv$"
 )
 
 for (nome in names(padroes)){
