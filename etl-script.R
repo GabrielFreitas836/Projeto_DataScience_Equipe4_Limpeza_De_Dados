@@ -1128,9 +1128,20 @@ saidas = list(
   sessoes       = sessoes_limpas
 )
 
+extrair_lote = function(caminhos) {
+  lotes = unique(sub("^([0-9]+)-.*$", "\\1", basename(caminhos)))
+  if (length(lotes) != 1) {
+    stop("Esperava 1 lote, mas foi encontrado: ", paste(lotes, collapse = ", "))
+  }
+  lotes
+}
+
+timestamp = format(Sys.time(), "%Y%m%d_%H%M%S")
+
 for (nome in names(saidas)) {
-  timestamp = format(Sys.time(), "%Y%m%d_%H%M%S")
-  destino = file.path(pasta_saida, paste0(nome, "_", timestamp, "_limpo.csv"))
+  lote = extrair_lote(arquivos[[nome]])
+  destino = file.path(pasta_saida,
+                      paste0(lote, "-", nome, "_", timestamp, "_limpo.csv"))
   write.csv(saidas[[nome]], destino, row.names = FALSE, fileEncoding = "UTF-8")
   message("Exportado: ", destino)
 }
