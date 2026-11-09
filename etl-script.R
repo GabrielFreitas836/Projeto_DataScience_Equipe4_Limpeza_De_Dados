@@ -56,13 +56,15 @@ encontrar_csv = function(pasta, padrao){
 }
 
 # 1.4 Padrões e importação
+args = commandArgs(TRUE)
+id_lote = args[1]
 padroes = c(
-  compras       = "^[0-9]*-compras_[0-9]{8}_.*\\.csv$",
-  itens         = "^[0-9]*-itens_[0-9]{8}_.*\\.csv$",
-  itens_compras = "^[0-9]*-itens_compra_[0-9]{8}_.*\\.csv$",
-  jogadores     = "^[0-9]*-jogadores_[0-9]+_[0-9]{8}_.*\\.csv$",
-  partidas      = "^[0-9]*-partidas_[0-9]{8}_.*\\.csv$",
-  sessoes       = "^[0-9]*-sessoes_[0-9]{8}_.*\\.csv$"
+  compras       = sprintf("^%s-compras_[0-9]{8}_.*\\.csv$", id_lote),
+  itens         = sprintf("^%s-itens_[0-9]{8}_.*\\.csv$", id_lote),
+  itens_compras = sprintf("^%s-itens_compra_[0-9]{8}_.*\\.csv$", id_lote),
+  jogadores     = sprintf("^%s-jogadores_[0-9]+_[0-9]{8}_.*\\.csv$", id_lote),
+  partidas      = sprintf("^%s-partidas_[0-9]{8}_.*\\.csv$", id_lote),
+  sessoes       = sprintf("^%s-sessoes_[0-9]{8}_.*\\.csv$", id_lote)
 )
 
 for (nome in names(padroes)){
@@ -1139,9 +1141,9 @@ extrair_lote = function(caminhos) {
 timestamp = format(Sys.time(), "%Y%m%d_%H%M%S")
 
 for (nome in names(saidas)) {
-  lote = extrair_lote(arquivos[[nome]])
+  #lote = extrair_lote(arquivos[[nome]])
   destino = file.path(pasta_saida,
-                      paste0(lote, "-", nome, "_", timestamp, "_limpo.csv"))
+                      paste0(id_lote, "-", nome, "_", timestamp, "_limpo.csv"))
   write.csv(saidas[[nome]], destino, row.names = FALSE, fileEncoding = "UTF-8")
   message("Exportado: ", destino)
 }
