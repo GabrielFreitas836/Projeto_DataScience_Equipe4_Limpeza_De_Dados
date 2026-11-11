@@ -12,6 +12,10 @@
 # 1. EXTRACT - IMPORTAÇÃO DO DATASET
 # ------------------------------------------------------------------------------
 
+# Importação das bibliotecas necessárias
+source("import-libraries.R")
+invisible(lapply(pacotes, library, character.only = TRUE))
+
 # 1.1 Definir base
 base_repo = here()
 

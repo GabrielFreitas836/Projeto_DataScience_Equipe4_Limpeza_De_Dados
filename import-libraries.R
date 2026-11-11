@@ -11,4 +11,3 @@ if (length(faltantes) > 0) {
   # repos explícito: no Rscript (não interativo) o R não pergunta o espelho do CRAN
   install.packages(faltantes, lib = lib_pessoal, repos = "https://cloud.r-project.org")
 }
-invisible(lapply(pacotes, library, character.only = TRUE))
