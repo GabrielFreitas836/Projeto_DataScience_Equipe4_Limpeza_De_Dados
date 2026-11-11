@@ -12,12 +12,10 @@
 # 1. EXTRACT - IMPORTAÇÃO DO DATASET
 # ------------------------------------------------------------------------------
 
-# Importação das bibliotecas necessárias
+# 1.1 Importação das bibliotecas necessárias
 source("import-libraries.R")
 invisible(lapply(pacotes, library, character.only = TRUE))
 
-# 1.1 Definir base
-base_repo = here()
 
 # 1.2 Verificar pasta
 pasta_dados = file.path("/opt","projeto","csvs") #file.path(base_repo, "..", "csvs")
