@@ -13,7 +13,6 @@
 # ------------------------------------------------------------------------------
 
 # 1.1 Importação das bibliotecas necessárias
-source("import-libraries.R")
 invisible(lapply(pacotes, library, character.only = TRUE))
 
 
