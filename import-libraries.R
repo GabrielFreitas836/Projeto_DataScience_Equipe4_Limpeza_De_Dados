@@ -1,5 +1,15 @@
+# essas duas linhas configuram o R pra pegar os binários dos pacotes a partir do repositório da Posit
+# pra evitar compilação, que desperdiça MUITO tempo
+options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))
+options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))
+# permite ao script usar múltiplos núcleos para acelerar a execução
+options(Ncpus = parallel::detectCores())
+
+
+
 # Bibliotecas necessárias para o projeto
 pacotes = c("dplyr", "lubridate", "stringr", "stringi", "ggplot2", "here", "ISOcodes")
+
 # Biblioteca pessoal (evita erro de permissão em /usr/local/lib/R/site-library)
 lib_pessoal = Sys.getenv("R_LIBS_USER")
 if (lib_pessoal == "") lib_pessoal = file.path(Sys.getenv("HOME"), "R", "library")
