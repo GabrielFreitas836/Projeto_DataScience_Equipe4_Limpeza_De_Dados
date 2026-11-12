@@ -19,6 +19,7 @@ options(Ncpus = parallel::detectCores())
 # ------------------------------------------------------------------------------
 
 # 1.1 Importação das bibliotecas necessárias
+pacotes = c("dplyr", "lubridate", "stringr", "stringi", "ggplot2", "here", "ISOcodes")
 invisible(lapply(pacotes, library, character.only = TRUE))
 
 
